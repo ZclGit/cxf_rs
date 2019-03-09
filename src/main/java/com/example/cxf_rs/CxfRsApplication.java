@@ -26,7 +26,7 @@ public class CxfRsApplication {
     public Server rsServer() {
         JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
         endpoint.setBus(bus);
-        endpoint.setAddress("/");
+        endpoint.setAddress("/endpoint");
         // Register 2 JAX-RS root resources supporting "/sayHello/{id}" and "/sayHello2/{id}" relative paths
         endpoint.setServiceBeans(Arrays.<Object>asList(new HelloServiceImpl1(), new HelloServiceImpl2()));
         endpoint.setFeatures(Arrays.asList(new Swagger2Feature()));
